@@ -1,17 +1,18 @@
 function ProtoSelect(id,options){
-     ProtoSelect.prototype.instance = 1;
-     ProtoInstancePool = typeof ProtoInstancePool == "undefined" ? {} : ProtoInstancePool;
-     if(typeof ProtoInstancePool[id] != "undefined")
-          return ProtoInstancePool[id];
-     if(typeof this.instance == "undefined")
+     if(typeof ProtoSelect.prototype.InstancePool == "undefined"){
+          ProtoSelect.prototype.InstancePool = {};
+     }
+     if(typeof ProtoSelect.prototype.InstancePool[id] != "undefined")
+          return ProtoSelect.prototype.InstancePool[id];
+     if(typeof this.InstancePool == "undefined")
           throw "excute it with new";
      var select = document.getElementById(id);    
      select.className += "proto_select";
      var html = '<div class="proto_select_current">';
-     html +=     '<div class="proto_select_current_input" data-value="">&nbsp;</div>';
-     html +=     '<div class="proto_select_current_arrow">﹀</div>';
-     html +=     '<div class="proto_select_clear"></div></div>';
-     html +=     '<ul class="proto_select_list" style="display:none;">';
+     html += '<div class="proto_select_current_input" data-value="">&nbsp;</div>';
+     html += '<div class="proto_select_current_arrow">﹀</div>';
+     html += '<div class="proto_select_clear"></div></div>';
+     html += '<ul class="proto_select_list" style="display:none;">';
      var selected = null;
      for(var i = 0;i < options.length; i++){
           var option = options[i];
@@ -63,6 +64,6 @@ function ProtoSelect(id,options){
           if(typeof that.onChange != "undefined")
                that.onChange(value);
      })
-     ProtoInstancePool[id] = this;
-     return ProtoInstancePool[id];
+     ProtoSelect.prototype.InstancePool[id] = this;
+     return ProtoSelect.prototype.InstancePool[id];
 }
