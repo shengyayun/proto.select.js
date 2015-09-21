@@ -1,0 +1,36 @@
+.proto_select{         
+     width:200px;
+     height:25px;
+     line-height: 25px;
+     font-size: 12px;
+}
+.proto_select ul,.proto_select li{
+     padding:0;
+     margin: 0;
+     list-style: none;
+}
+ .proto_select li:hover{
+	background:#dbeaf9;
+ }
+.proto_select_current,.proto_select_list{
+     border:1px solid #c2c2c2;
+     cursor: default;
+}
+.proto_select_current_input,.proto_select_current_arrow{
+     float:left;
+}
+.proto_select_current_input{
+     width:80%;
+}
+.proto_select_current_input,.proto_select_item{
+     text-indent: 0.5em;
+}
+.proto_select_current_arrow{
+     width:18%;
+     text-align: center;
+     border-left: 1px solid #c2c2c2;
+     cursor: pointer;
+}
+.proto_select_clear{
+     clear:both;
+}

@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+<head>
+     <title>select</title>
+     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+     <script type="text/javascript" src="proto.select.js"></script>
+     <link rel="stylesheet" type="text/css" href="proto.select.css">
+</head>
+<body>
+     <div id="select"></div>
+     <script type="text/javascript">    
+     var options = [];
+     options.push({text:"请选择",value:0,selected:true});
+     options.push({text:"正常",value:1});
+     options.push({text:"锁定",value:2});
+     var select = new ProtoSelect("select",options);
+     select.change(function(val){
+          console.log(val);
+          console.log(select);
+          console.log(select.val());
+     });
+     </script>
+</body>
+</html>
