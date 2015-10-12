@@ -58,10 +58,6 @@
                input.setAttribute("data-value",that.selected.value);
                input.innerHTML = that.selected.text;
           }
-          eventBind(that.select,"change",function(){
-               input.setAttribute("data-value",this.value);
-               input.innerHTML = this.options[this.selectedIndex].text;
-          })
           eventBind(current,"click",function(){
                list.style.display = list.style.display == "block"?"none":"block";
           })
